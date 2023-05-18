@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+
+    <link href="./assets/css/styles.css" rel="stylesheet">
+    <link href="./assets/css/destyle.css" rel="stylesheet">
+
+    <title>Image Viewer</title>
+
+    <script type="module" src="./templates.js"></script>
+</head>
+
+<body>
+    <image-viewer id="image-viewer-app"></image-viewer>
+
+
+    <template id="template@img-frame">
+        <style></style>
+        <div class="frame">
+            <div class="img"></div>
+        </div>
+    </template>
+
+    <template id="template@gryph-icon">
+        <style></style>
+        <span class="gryph"></span>
+    </template>
+
+    <template id="template@simple-icon">
+        <style>
+            .icon {
+                display: inline-block;
+                position: relative;
+                width: 1em;
+                height: 1em;
+                line-height: 1em;
+            }
+
+            .icon * {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+                display: inline-block;
+            }
+
+            .left-angle {
+                border: calc(1em / 2) solid transparent;
+                border-right: calc(1em / 2) solid var(--color, black);
+            }
+
+            .right-angle {
+                border: calc(1em / 2) solid transparent;
+                border-left: calc(1em / 2) solid var(--color, black);
+                ;
+            }
+
+            .top-angle {
+                border: calc(1em / 2) solid transparent;
+                border-bottom: calc(1em / 2) solid var(--color, black);
+            }
+
+            .bottom-angle {
+                border: calc(1em / 2) solid transparent;
+                border-top: calc(1em / 2) solid var(--color, black);
+            }
+        </style>
+        <div class="icon">
+            <span></span>
+        </div>
+    </template>
+
+    <template id="template@item-container">
+        <style>
+            .container {
+                display: flex;
+                flex-direction: var(--direction, row);
+                flex-wrap: wrap;
+
+                gap: 0.2em;
+            }
+        </style>
+        <div class="container">
+        </div>
+    </template>
+
+    <template id="template@item-explorer">
+    </template>
+
+    <template id="template@input-text">
+        <style>
+            :root {
+                line-height: 1.5em;
+                height: 1.5em;
+            }
+
+            .layout {
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 10% auto;
+            }
+
+            div[data-prefix-symbol] {
+                width: 100%;
+                text-align: center;
+            }
+
+            div[data-prefix-symbol]::before {
+                content: attr(data-prefix-symbol);
+                overflow: hidden;
+                line-height: 1.5em;
+            }
+
+            input {
+                width: 100%;
+            }
+        </style>
+        <div class="layout">
+            <div data-prefix-symbol=">">
+            </div>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+    </template>
+
+    <template id="template@image-viewer">
+        <link rel="stylesheet" href="./assets/css/image-viewer-app.css">
+        <div>
+            <article class="image-viewer">
+                <header>
+                    <input-text></input-text>
+                    <item-container data-type="fs:dir" direction="column"></item-container>
+                    <item-container data-type="fs:image"></item-container>
+                </header>
+
+                <item-container data-type="image">
+                </item-container>
+            </article>
+
+            <div style="display: none">
+                <ul class="menu">
+                    <li>
+                        <simple-icon icon="left-angle" color="var(--accent-color)" style="font-size: 2em;">
+                        </simple-icon>
+                    </li>
+                    <li>
+                        <simple-icon icon="right-angle" color="var(--accent-color)" style="font-size: 2em;">
+                        </simple-icon>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </template>
+</body>
+
+</html>

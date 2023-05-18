@@ -1,2 +1,10 @@
-# img-viewer-st
-Time to view image.
+# 画像ビューワー
+
+Electronを用いたデスクトップアプリの開発
+
+
+## 機能
+
+- 相対URLによるファイル探索
+- 画像表示
+

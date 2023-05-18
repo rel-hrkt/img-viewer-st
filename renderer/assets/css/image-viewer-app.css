@@ -1,0 +1,35 @@
+.image-viewer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+article.image-viewer>header {
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article.image-viewer>header>* {
+    width: 90%;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    width: min(var(--min-width), 80%);
+}
+
+.menu>* {
+    text-align: center;
+}
+
+
+simple-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "img-viewer-st",
+  "version": "1.0.0",
+  "description": "Time to view image.",
+  "main": "app/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rel-hrkt/img-viewer-st.git"
+  },
+  "author": "iori",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rel-hrkt/img-viewer-st/issues"
+  },
+  "homepage": "https://github.com/rel-hrkt/img-viewer-st#readme",
+  "devDependencies": {
+    "electron": "^24.3.0"
+  }
+}

@@ -1,0 +1,30 @@
+:root {
+    font-size: 16px;
+
+    --min-width: 480px;
+}
+
+:root {
+    --theme-color: hsl(94deg 80% 50%);
+    --sub-color: hsl(167deg 80% 50%);
+    --base-color: hsl(37deg 100% 93%);
+    --accent-color: hsl(330deg 80% 50%);
+    --letter-color: hsl(0, 0, 10%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --theme-color: hsl(0deg 0% 0%);
+        --sub-color: hsl(0deg 0% 25%);
+        --base-color: hsl(0deg 0% 20%);
+        --accent-color: hsl(0deg 80% 40%);
+        --letter-color: hsl(0, 0, 98%);
+    }
+}
+
+body {
+    background-color: var(--base-color);
+    color: var(--letter-color);
+    line-height: 1em;
+    letter-spacing: 0.04em;
+}
